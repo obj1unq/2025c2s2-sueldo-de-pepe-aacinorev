@@ -81,13 +81,13 @@ object bonoResultadosPorcentaje {
 }
 
 object bonoResultadosMontoFijo {
-    method bono(){
+    method bono(empleado){
         return 800
     }
 }
 
 object bonoNulo {
-    method bono(){
+    method bono(empleado){ //Aunque sea un parametro no usado, es para el polimorfismo y que sea el mismo mensaje
         return 0
     }
 }
