@@ -4,6 +4,10 @@ describe "Sueldo Pepe" {
 	
 	test "Test 1" {
 		pepe.categoria(cadete)
+		pepe.bonoPorResultados(bonoResultadosMontoFijo)
+		pepe.bonoPorPresentismo(bonoPresentismoNormal)
+		pepe.faltas(3)
+		assert.equals(20800, pepe.sueldo())
 	}
 
 	

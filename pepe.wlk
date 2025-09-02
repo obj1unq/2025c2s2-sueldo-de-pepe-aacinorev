@@ -1,8 +1,8 @@
 object pepe {
     var categoria = cadete
     var faltas = 0
-    var bonoPorPresentismo = bonoNulo
-    var bonoPorResultados = bonoNulo
+    var bonoXPresentismo = bonoNulo
+    var bonoXResultados = bonoNulo
     
 	method categoria(_categoria){
         categoria = _categoria
@@ -25,15 +25,15 @@ object pepe {
     }
 
     method bonoPorPresentismo(_bonoPorPresentismo){
-        bonoPorPresentismo = _bonoPorPresentismo
+        bonoXPresentismo = _bonoPorPresentismo
     }
 
     method bonoPorResultados(_bonoPorResultados){
-        bonoPorResultados = _bonoPorResultados
+        bonoXResultados = _bonoPorResultados
     }
 
     method sueldo(){
-        return self.neto() + bonoPorPresentismo.bono(self) + bonoPorResultados.bono(self)
+        return self.neto() + bonoXPresentismo.bono(self) + bonoXResultados.bono(self)
     }
 
 }
