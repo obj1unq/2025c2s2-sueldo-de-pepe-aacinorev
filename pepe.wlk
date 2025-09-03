@@ -1,8 +1,8 @@
 object pepe {
     var categoria = cadete
     var faltas = 0
-    var bonoXPresentismo = bonoNulo
-    var bonoXResultados = bonoNulo
+    var property bonoPresentismo = bonoNulo
+    var property bonoResultados = bonoNulo
     
 	method categoria(_categoria){
         categoria = _categoria
@@ -24,18 +24,25 @@ object pepe {
         return categoria.neto()
     }
 
-    method bonoPorPresentismo(_bonoPorPresentismo){
-        bonoXPresentismo = _bonoPorPresentismo
+    method bonoPorResultados(_bonoPorResultados){
+        bonoResultados = _bonoPorResultados
     }
 
-    method bonoPorResultados(_bonoPorResultados){
-        bonoXResultados = _bonoPorResultados
+    method bonoPorPresentismo(_bonoPorPresentismo){
+        bonoPresentismo = _bonoPorPresentismo
+    }
+
+    method bonoPorPresentismo(){
+        return bonoPresentismo.bono(self)
+    }
+
+    method bonoPorResultados(){
+        return bonoResultados.bono(self)
     }
 
     method sueldo(){
-        return self.neto() + bonoXPresentismo.bono(self) + bonoXResultados.bono(self)
+        return self.neto() + bonoPresentismo.bono(self) + bonoResultados.bono(self)
     }
-
 }
 
 object cadete {
@@ -54,9 +61,9 @@ object gerente {
 
 object bonoPresentismoNormal {
     method bono(empleado){
-        if(empleado.faltas() == 0){2000}
-        else if(empleado.faltas() == 1) {1000}
-        else {0}
+        if(empleado.faltas() == 0){return 2000}
+        else if(empleado.faltas() == 1) {return 1000}
+        else {return 0}
     }
 }
 
